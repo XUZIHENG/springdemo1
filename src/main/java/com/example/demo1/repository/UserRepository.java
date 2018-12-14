@@ -3,6 +3,7 @@ package com.example.demo1.repository;/**
  */
 
 import com.example.demo1.pojo.User;
+import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
@@ -11,26 +12,6 @@ import java.util.List;
  *@date 2018/12/11
  *@since 1.0
  */
-public interface UserRepository {
-	/**
-	 * 创建或修改用户
-	 * @param user
-	 * @return
-	 */
-	User saveOrUpdateUser(User user);
+public interface UserRepository extends CrudRepository<User,Long>{
 
-	/**
-	 * 删除用户
-	 * @param id
-	 */
-	void deleteUser(Long id);
-
-	/**
-	 * 根据ID查询用户
-	 * @param id
-	 * @return
-	 */
-	User getUserById(Long id);
-
-	List<User> listUsers();
 }
